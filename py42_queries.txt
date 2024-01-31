@@ -1,0 +1,22 @@
+>>> import py42.sdk
+>>> sdk = py42.sdk.from_local_account("https://console.us.code42.com","nikunj.aslaliya+partners@code42.com","Test123!")
+>>> from py42.sdk.queries.alerts.filters import *
+>>> from py42.sdk.queries.alerts.alert_query import AlertQuery
+>>> filters = [AlertState.eq(AlertState.OPEN), Severity.is_in([Severity.HIGH, Severity.MEDIUM])]
+>>> query = AlertQuery(*filters)
+>>> x=sdk.alerts.get_all_alert_details(query)
+>>> for i in x:
+...     print(i)
+...
+
+query.sort_key="Actor"
+query.sort_direction="asc"
+query.sort_direction="desc"
+
+
+
+Sort key must be one of AlertId, TenantId, Type, Name, Description, Actor, ActorId, Target, Severity, RuleSource, CreatedAt, Observations, Notes, State, StateLastModifiedAt, StateLastModifiedBy, LastModifiedTime, LastModifiedBy, RuleId.",
+
+
+
+
